@@ -1,24 +1,21 @@
 package br.com.algaworks.algafood.domain.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 @EqualsAndHashCode
 @Getter @Setter
 @Entity
-@Table(name = "tab_cozinha")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Cozinha {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     //todo ao longo do curso devo mudar o "nome" p/ categoria
-    @Column(name = "nome_cat_cozinha")
+    @Column(name = "nome", length = 30 )
     private String nome;
 
 }
